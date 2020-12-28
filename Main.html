@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texture</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-asset>
+            <img src="./texturesb/baseball.jpg" id="ball">
+        </a-asset>
+        <!-- <a-box
+            src="#base"
+            repeat="2 2"
+            normal-map="#normal"
+            normal-texture-repeat="2 2"
+            position="-1 1.5 -2"
+        ></a-box> -->
+        <a-sphere
+            src="#ball"
+            position="1 1.5 -2"
+        ></a-sphere>
+    </a-scene>
+</body>
+</html>
