@@ -3,24 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texture</title>
+    <title>Baseball Simulator</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-ground-component@0.0.4/dist/aframe-ground-component.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
 </head>
 <body>
+    <script>
+
+    </script>
     <a-scene>
+        <a-sky color="lightgray"></a-sky>
         <a-asset>
-            <img src="./texturesb/baseball.jpg" id="ball">
+            <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
+            <a-asset-item id="ball" src="models/ball/scene.gltf"></a-asset-item>
         </a-asset>
-        <!-- <a-box
-            src="#base"
-            repeat="2 2"
-            normal-map="#normal"
-            normal-texture-repeat="2 2"
-            position="-1 1.5 -2"
-        ></a-box> -->
+        <a-asset>
+            <img src="./textures/baseball1.jpg" id="ball">
+        </a-asset>
+        <a-entity 
+            ground="ground: flat;
+                    groundTexture: walkernoise;
+                    groundColor: #039603;
+                    groundColor2: #0fa90f;">
+        </a-entity>
+        <a-entity
+            grabbable
+            gltf-model="#bat"
+            position="0  0 -1"
+            rotation="0 0 0"
+            scale= "0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+            gltf-model="#ball"
+            position="0  1 -10"
+            rotation="0 0 0"
+            scale= "0.0007 0.0007 0.0007"
+        ></a-entity>
+        <a-entity
+            laser-controls="
+                hand: right;
+                color: red;
+            "
+        ></a-entity>
+        <a-entity
+            sphere-collider="objects: a-entity;"
+            super-hands
+            hand-controls="
+                hand: right;
+                color: red;
+            "
+        ></a-entity>
         <a-sphere
-            src="#ball"
-            position="1 1.5 -2"
+            radius= "0.1"
+            position="-1 1 -1"
         ></a-sphere>
     </a-scene>
 </body>

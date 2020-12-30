@@ -1,0 +1,11 @@
+Model Information:
+* title:	baseball
+* source:	https://sketchfab.com/3d-models/baseball-64208f6fc08e4ce4b07653d1cb35e2f4
+* author:	IDALGAME (https://sketchfab.com/IDALGAME)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "baseball" (https://sketchfab.com/3d-models/baseball-64208f6fc08e4ce4b07653d1cb35e2f4) by IDALGAME (https://sketchfab.com/IDALGAME) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
