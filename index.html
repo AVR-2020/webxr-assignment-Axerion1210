@@ -14,11 +14,11 @@
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
 
     <!-- Custom script -->
-    <!-- <script src="scripts/play.js"></script> -->
+    <script src="scripts/ballLaunch.js"></script>
     <script src="scripts/animation.js"></script>
 </head>
 <body>
-    <a-scene physics="gravity: -9.8;">
+    <a-scene id="mainScene" physics="gravity: -9.8;">
         <a-sky color="lightblue"></a-sky>
         <a-asset>
             <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
@@ -60,14 +60,16 @@
         </a-entity>
         <!-- mass: 0.145 -->
         <a-entity
+            launch
+            id="ball1"
             gltf-model="#ball"
-            dynamic-body
-            position="1  1.6 -10"
-            rotation="0 0 0"
+            dynamic-body="mass:10;"
+            position="1.8  1.7 -10"
             scale= "0.0007 0.0007 0.0007"
         ></a-entity>
         <a-box
-            position="1 0.5 -10"
+            id="launcher"
+            position="1.8 0.5 -10"
             scale=".25 2 .25"
             color="gray"
             static-body

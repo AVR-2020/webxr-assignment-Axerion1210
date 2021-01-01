@@ -5,9 +5,8 @@ AFRAME.registerComponent('hit', {
         document.addEventListener('click', function(e){
             // if (e.key == " ") {
                 console.log("Swing!");
-                var rotateValue = 'property: rotation; dur: 600; from: "0 -60 7"; to: "0 180 7";';
-
-                console.log(rotateValue);
+                var rotateValue = 'property: rotation; dur: 500; from: "0 -60 7"; to: "0 180 7";';
+                // console.log(rotateValue);
                 batEntity.setAttribute("position", "0 1.3 0");
                 bat.setAttribute("position","1 -0.54 0");
                 batEntity.setAttribute("animation__rotation", rotateValue);
@@ -19,7 +18,7 @@ AFRAME.registerComponent('hit', {
                     bat.setAttribute("position","0.5 -0.54 0");
                     batEntity.setAttribute("animation__rotation", rotateValue2);
                     batEntity.emit("swingStart");
-                },600);
+                },500);
             // }
         });
     }
