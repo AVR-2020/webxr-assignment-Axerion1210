@@ -10,10 +10,20 @@ document.addEventListener("keypress",function(e){
         newBall.setAttribute("launch",true);
         // newBall.setAttribute("sphere-collider");
         newBall.setAttribute("gltf-model","#ball");
-        newBall.setAttribute("dynamic-body","shape: sphere;");
-        newBall.setAttribute("position","1 1.43 -10");
+        newBall.setAttribute("dynamic-body","shape: sphere; mass:0.1;");
+        newBall.setAttribute("position","1.4 1.43 -10");
         newBall.setAttribute("scale","0.0005 0.0005 0.0005");
 
         mainScene.appendChild(newBall);
+
+        var stand = document.getElementById("launcher");
+        stand.setAttribute("id","launcher");
+        stand.setAttribute("position","1.4 0.3 -10");
+        stand.setAttribute("color","blue");
+        
+        // var ball1 = document.querySelector("#ball1"); 
+        // ballCollision();
+        // setTimeout(() => {
+        // }, 1000);
     }
 });
