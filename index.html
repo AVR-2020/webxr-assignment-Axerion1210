@@ -18,7 +18,7 @@
     <script src="scripts/animation.js"></script>
 </head>
 <body>
-    <a-scene id="mainScene" physics="gravity: -9.8;">
+    <a-scene id="mainScene" physics="gravity: -9.8; debug: true;">
         <a-sky color="lightblue"></a-sky>
         <a-asset>
             <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
@@ -26,9 +26,9 @@
         </a-asset>
         
         <!-- Ground -->
-        <a-entity 
+        <!-- groundTexture: walkernoise; -->
+        <a-entity
             ground="ground: flat;
-                    groundTexture: walkernoise;
                     groundColor: #039603;
                     groundColor2: #0fa90f;">
         </a-entity>
@@ -42,56 +42,70 @@
             opacity="0"
         ></a-plane>
 
+        <!-- Stand By -->
         <a-entity
-            hit
-            id="bat1"
-            static-body
-            rotation="0 0 70"
-            animation__rotation="
-                startEvents: swingStart;
-            "
-            position="0.4 1.3 -0.33">
+        id="batStandBy"
+        hit
+        position="0.4 1.4 -0.33"
+        rotation="0 0 70"
+        >
             <a-entity
-                id = "bat2"
-                gltf-model="#bat"
-                position="0.5 -0.54 0"
-                scale= "0.1 0.1 0.1"
+            id = "bat1"
+            gltf-model="#bat"
+            position="0.5 -0.54 0"
+            scale= "0.1 0.1 0.1"
+            animation__rotation="
+            startEvents: swingStart;
+            "
             ></a-entity>
         </a-entity>
+
+        <!-- Swing Animation -->
+        <a-entity
+        hit
+        visible="false"
+        id="batSwing"
+        static-body = "shape: mesh;"
+        
+        animation__rotation="
+        startEvents: swingStart;
+        ">
+            <a-entity
+            position="0 1.4 -0.33"
+            rotation="0 -60 7">
+                <a-entity
+                id = "batObj"
+                gltf-model="#bat"
+                position="1 -0.54 0"
+                scale= "0.1 0.1 0.1"
+                ></a-entity>
+            </a-entity>
+        </a-entity>
+
+        <!-- Ball -->
         <!-- mass: 0.145 -->
         <a-entity
             launch
             id="ball1"
             gltf-model="#ball"
-            dynamic-body="mass:10;"
-            position="1.8  1.7 -10"
-            scale= "0.0007 0.0007 0.0007"
+            dynamic-body="shape:sphere;"
+            position="1.2  2 -10"
+            scale= "0.0005 0.0005 0.0005"
         ></a-entity>
+        <!-- <a-sphere
+            launch
+            id="ball1"
+            dynamic-body="mass:50;"
+            position="1.5 1.65 -10"
+            scale="0.05 0.05 0.05"
+        ></a-sphere> -->
         <a-box
             id="launcher"
-            position="1.8 0.5 -10"
-            scale=".25 2 .25"
+            position="1.2 0.3 -10"
+            scale=".1 2 .1"
             color="gray"
             static-body
         ></a-box>
-        <!-- <a-entity
-            laser-controls="
-                hand: right;
-                color: red;
-            "
-        ></a-entity>
-        <a-entity
-            sphere-collider="objects: a-entity;"
-            super-hands
-            hand-controls="
-                hand: right;
-                color: red;
-            "
-        ></a-entity> -->
-        <!-- <a-sphere
-            radius= "0.1"
-            position="-1 1 -1"
-        ></a-sphere> -->
     </a-scene>
 </body>
 </html>
