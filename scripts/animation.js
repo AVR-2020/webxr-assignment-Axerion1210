@@ -5,8 +5,8 @@ AFRAME.registerComponent('hit', {
         var batStandby = document.querySelector("#batStandBy");
         document.addEventListener('click', function(){
             // if (e.key == " ") {
-                console.log("Swing!");
-                var rotateValue = 'property: rotation; dur: 300; to: "0 180 0";';
+                console.log("swing");
+                var rotateValue = 'property: rotation; dur: 400; to: "0 180 0";';
                 // console.log(rotateValue);
                 // batEntity.setAttribute("position", "0 1.4 -0.33");
                 // batEntity.setAttribute("static-body", true);
@@ -25,7 +25,7 @@ AFRAME.registerComponent('hit', {
                     batEntity.setAttribute("static-body", false);
                     batEntity.setAttribute("visible", false);
                     batStandby.setAttribute("visible", true);
-                },300);
+                },400);
             // }
         });
     }

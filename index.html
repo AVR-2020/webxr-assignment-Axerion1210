@@ -16,9 +16,10 @@
     <!-- Custom script -->
     <script src="scripts/ballLaunch.js"></script>
     <script src="scripts/animation.js"></script>
+    <script src="scripts/spawn.js"></script>
 </head>
 <body>
-    <a-scene id="mainScene" physics="gravity: -9.8; debug: true;">
+    <a-scene id="mainScene" physics="gravity: -9.8; debug: true; restitution: 0.01; friction: 0.9;">
         <a-sky color="lightblue"></a-sky>
         <a-asset>
             <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
@@ -32,15 +33,15 @@
                     groundColor: #039603;
                     groundColor2: #0fa90f;">
         </a-entity>
-        <a-plane 
+        <a-box
             id="ground" 
             static-body 
-            position="0 -0.02 0" 
-            rotation="-90 0 0" 
-            height="1000" 
-            width="1000"
+            position="0 0 0" 
+            width="100"
+            depth="100"
+            height="0.2"
             opacity="0"
-        ></a-plane>
+        ></a-box>
 
         <!-- Stand By -->
         <a-entity
@@ -53,7 +54,7 @@
             id = "bat1"
             gltf-model="#bat"
             position="0.5 -0.54 0"
-            scale= "0.1 0.1 0.1"
+            scale= "0.13 0.1 0.1"
             animation__rotation="
             startEvents: swingStart;
             "
@@ -63,8 +64,8 @@
         <!-- Swing Animation -->
         <a-entity
         hit
-        visible="false"
         id="batSwing"
+        visible="false"
         static-body = "shape: mesh;"
         
         animation__rotation="
@@ -76,8 +77,8 @@
                 <a-entity
                 id = "batObj"
                 gltf-model="#bat"
-                position="1 -0.54 0"
-                scale= "0.1 0.1 0.1"
+                position="1.3 -0.69 0"
+                scale= "0.13 0.13 0.13"
                 ></a-entity>
             </a-entity>
         </a-entity>
@@ -89,7 +90,7 @@
             id="ball1"
             gltf-model="#ball"
             dynamic-body="shape:sphere;"
-            position="1.2  2 -10"
+            position="1 1.43 -10"
             scale= "0.0005 0.0005 0.0005"
         ></a-entity>
         <!-- <a-sphere
@@ -101,9 +102,9 @@
         ></a-sphere> -->
         <a-box
             id="launcher"
-            position="1.2 0.3 -10"
+            position="1 0.3 -10"
             scale=".1 2 .1"
-            color="gray"
+            color="blue"
             static-body
         ></a-box>
     </a-scene>
