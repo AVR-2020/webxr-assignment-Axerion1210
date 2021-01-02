@@ -5,6 +5,7 @@ AFRAME.registerComponent('launch', {
     //     console.log(ball.body);
     // });
     var par = ball.parentNode;
+    var hit = 0;
     ball.addEventListener("collide",function(ev){
             // var ball = document.getElementById("ball1");
             // var par = ball.parentNode;
@@ -36,16 +37,23 @@ AFRAME.registerComponent('launch', {
                 }
                 else if(ev.detail.body.el.id === "batSwing"){
                     console.log("hit");
+                    hit = 1;
                     ball.removeEventListener("collide", this.ev);
                 }
                 else if(ev.detail.body.el.id === "ground"){
                     ball.removeEventListener("collide", this.ev);
                     console.log("ground");
+                    if(hit){
+                        scoreUp();
+                        hit = 0;
+                    }
                     par.removeChild(ball);
                 }
                 else if(ev.detail.body.el.id === "strike"){
                     ball.removeEventListener("collide", this.ev);
                     console.log("strike");
+                    strikes();
+                    hit = 0;
                     par.removeChild(ball);
                 }
             // });

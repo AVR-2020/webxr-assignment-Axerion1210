@@ -16,11 +16,12 @@ document.addEventListener("keypress",function(e){
 
         mainScene.appendChild(newBall);
 
-        var stand = document.getElementById("launcher");
-        stand.setAttribute("id","launcher");
-        stand.setAttribute("position","1.4 0.3 -10");
-        stand.setAttribute("color","blue");
-        
+        var stand = document.getElementById("stand");
+        if(stand){
+            stand.setAttribute("id","launcher");
+            stand.setAttribute("position","1.4 0.3 -10");
+            stand.setAttribute("color","blue");
+        }
         // var ball1 = document.querySelector("#ball1"); 
         // ballCollision();
         // setTimeout(() => {

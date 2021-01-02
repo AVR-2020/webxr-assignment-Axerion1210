@@ -15,6 +15,7 @@
 
     <!-- Custom script -->
     <script src="scripts/spawn.js"></script>
+    <script src="scripts/score.js"></script>
     <script src="scripts/ballLaunch.js"></script>
     <script src="scripts/animation.js"></script>
     
@@ -44,6 +45,37 @@
             opacity="0"
         ></a-box>
 
+        <!-- Scoreboard -->
+        <a-plane
+        position="-1.1 2 -2"
+        height="0.6"
+        opacity="0.5"
+        rotation="0 10 0">
+            <a-text
+            value="Score" color="black"
+            width="3"     align="center" 
+            shader="flat" position="-0.2 0.15 0"
+            ></a-text>
+            <a-text 
+            id="scoreboard"
+            value="0"     width="3" 
+            align="center"position="0.25 0.15 0" 
+            color="black" shader="flat">
+            </a-text>
+            <a-text
+            value="Strike"color="black"
+            width="3"     align="center" 
+            shader="flat" position="-0.2 -0.15 0"
+            ></a-text>
+            <a-text
+            id="strike"
+            value="O O O" color="black"
+            width="3"     align="center" 
+            shader="flat" position="0.25 -0.15 0"
+            ></a-text>
+        </a-plane>
+
+        <!-- Strike Area -->
         <a-box
             id="strike" 
             static-body 
@@ -85,7 +117,7 @@
         ">
             <a-entity
             position="0 1.4 -0.33"
-            rotation="0 -60 7">
+            rotation="0 -60 10">
                 <a-entity
                 id = "batObj"
                 gltf-model="#bat"
@@ -96,7 +128,6 @@
         </a-entity>
 
         <!-- Ball -->
-        <!-- mass: 0.145 -->
         <!-- <a-entity
             launch
             id="ball1"
@@ -105,13 +136,8 @@
             position="1 1.43 -10"
             scale= "0.0005 0.0005 0.0005"
         ></a-entity> -->
-        <!-- <a-sphere
-            launch
-            id="ball1"
-            dynamic-body="mass:50;"
-            position="1.5 1.65 -10"
-            scale="0.05 0.05 0.05"
-        ></a-sphere> -->
+        
+        <!-- Ball Stand -->
         <a-box
             id="launcher"
             position="1.4 0.3 -10"
