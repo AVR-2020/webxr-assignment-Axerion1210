@@ -18,6 +18,7 @@
     <script src="scripts/score.js"></script>
     <script src="scripts/ballLaunch.js"></script>
     <script src="scripts/animation.js"></script>
+    <script src="scripts/menu.js"></script>
     
 </head>
 <body>
@@ -27,11 +28,128 @@
             <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
             <a-asset-item id="ball" src="models/ball/scene.gltf"></a-asset-item>
         </a-asset>
+        <a-camera wasd-controls-enabled="false">
+            <a-cursor id="cursor"></a-cursor>
+        </a-camera>
+        <!-- Menu -->
+        <a-entity id="menu" visible="true" position="0 1.6 -1.2">
+            <a-plane
+            width="2.5"
+            height="1.5"
+            color="white"
+            opacity="0.5"> 
+                <a-text value="Baseball Simulator"
+                    color="black" align="center" 
+                    shader="flat" position="0 0.5 0"></a-text>
+                    <a-plane
+                    play
+                    id="play"
+                    width="1"
+                    height="0.3"
+                    color="gray"
+                    opacity="0.75"
+                    position="0 0 0.1"> 
+                        <a-text value="Play" width="3"
+                            color="black" align="center" 
+                            shader="flat" position="0 0 0"></a-text>
+                    </a-plane>
+                    <a-plane
+                    howto
+                    id="howTo"
+                    width="1"
+                    height="0.3"
+                    color="gray"
+                    opacity="0.75"
+                    position="0 -0.4 0.1"> 
+                        <a-text value="How to Play" width="3"
+                            color="black" align="center" 
+                            shader="flat" position="0 0 0"></a-text>
+                    </a-plane>
+            </a-plane>
 
+        </a-entity>
+        <!-- Game Over -->
+        <a-entity id="gameOver" visible="false" position="0 -10 -1.2">
+            <a-plane
+            width="2.5"
+            height="1.5"
+            color="white"
+            opacity="0.5"> 
+                <a-text value="Game Over"
+                    color="red" align="center" 
+                    shader="flat" position="0 0.5 0"></a-text>
+                <a-text value="Score" width="3"
+                    color="black" align="center" 
+                    shader="flat" position="0 0.2 0"></a-text>    
+                <a-text id="finalscore" value="0" width="4"
+                    color="black" align="center" 
+                    shader="flat"></a-text>
+                <a-plane
+                id="back"
+                backto
+                width="0.7"
+                height="0.3"
+                color="gray"
+                opacity="0.75"
+                position="-0.6 -0.4 0.1"> 
+                    <a-text value="Back" width="3"
+                        color="black" align="center" 
+                        shader="flat" position="0 0 0"></a-text>
+                </a-plane>
+                <a-plane
+                id="retry"
+                retry
+                width="0.7"
+                height="0.3"
+                color="gray"
+                opacity="0.75"
+                position="0.6 -0.4 0.1"> 
+                    <a-text value="Play Again" width="3"
+                        color="black" align="center" 
+                        shader="flat" position="0 0 0"></a-text>
+                </a-plane>
+            </a-plane>
+        </a-entity>
+        <!-- How To Play -->
+        <a-entity id="howToPlay" visible="false" position="0 -10 -1.2">
+            <a-plane
+            width="2.5"
+            height="1.5"
+            color="white"
+            opacity="0.5"> 
+                <a-text value="How To Play" width="4"
+                    color="black" align="center" 
+                    shader="flat" position="0 0.5 0"></a-text>
+                <a-text value="Left Click to interact with menu
+                            or swing the baseball Bat
+
+                            Space to spawn the ball
+                            The ball will launch toward player
+
+                            Player needs to hit the ball as many as possible
+                            If the player miss the ball, they get a strike
+                            If the player get 3 strikes, the game ends." width="2"
+                    color="black" align="center" 
+                    shader="flat" position="0 -0.1 0"></a-text>    
+
+                <a-plane
+                id="back2"
+                backto2
+                width="0.4"
+                height="0.2"
+                color="gray"
+                opacity="0.75"
+                position="-0.8 0.5 0.1"> 
+                    <a-text value="Back" width="2"
+                        color="black" align="center" 
+                        shader="flat" position="0 0 0"></a-text>
+                </a-plane>
+            </a-plane>
+        </a-entity>
         <!-- Ground -->
-        <!-- groundTexture: walkernoise; -->
         <a-entity
             ground="ground: flat;
+                    groundTexture: walkernoise;
                     groundColor: #039603;
                     groundColor2: #0fa90f;">
         </a-entity>
@@ -44,10 +162,12 @@
             height="0.2"
             opacity="0"
         ></a-box>
-
+        <!-- Play Area -->
+        <a-entity id="playArea" visible="false">
         <!-- Scoreboard -->
         <a-plane
-        position="-1.1 2 -2"
+        id="scoreboard"
+        position="-2 2.5 -2"
         height="0.6"
         opacity="0.5"
         rotation="0 10 0">
@@ -57,7 +177,7 @@
             shader="flat" position="-0.2 0.15 0"
             ></a-text>
             <a-text 
-            id="scoreboard"
+            id="score"
             value="0"     width="3" 
             align="center"position="0.25 0.15 0" 
             color="black" shader="flat">
@@ -90,7 +210,6 @@
         <!-- Stand By -->
         <a-entity
         id="batStandBy"
-        hit
         position="0.4 1.4 -0.33"
         rotation="0 0 70"
         >
@@ -145,6 +264,7 @@
             color="blue"
             static-body
         ></a-box>
+        </a-entity>
     </a-scene>
 </body>
 </html>

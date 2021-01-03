@@ -1,10 +1,11 @@
 document.addEventListener("keypress",function(e){
-    if(e.key==" "){
+    var play = document.querySelector("#playArea");
+    if(e.key==" " && play.getAttribute("visible") == 1){
         var oldBall = document.querySelector("#ball1");
         const newBall = document.createElement("a-entity");
 
         if(oldBall)
-            mainScene.removeChild(oldBall);
+            playArea.removeChild(oldBall);
 
         newBall.setAttribute("id","ball1");
         newBall.setAttribute("launch",true);
@@ -14,7 +15,8 @@ document.addEventListener("keypress",function(e){
         newBall.setAttribute("position","1.4 1.43 -10");
         newBall.setAttribute("scale","0.0005 0.0005 0.0005");
 
-        mainScene.appendChild(newBall);
+        playArea.appendChild(newBall);
+        console.log("ball")
 
         var stand = document.getElementById("stand");
         if(stand){
