@@ -29,7 +29,7 @@
             <a-asset-item id="ball" src="models/ball/scene.gltf"></a-asset-item>
         </a-asset>
         <a-camera wasd-controls-enabled="false">
-            <a-cursor id="cursor"></a-cursor>
+            <a-cursor id="cursor" color="red"></a-cursor>
         </a-camera>
         <!-- Menu -->
         <a-entity id="menu" visible="true" position="0 1.6 -1.2">
@@ -49,7 +49,7 @@
                     color="gray"
                     opacity="0.75"
                     position="0 0 0.1"> 
-                        <a-text value="Play" width="3"
+                        <a-text value="Mulai" width="3"
                             color="black" align="center" 
                             shader="flat" position="0 0 0"></a-text>
                     </a-plane>
@@ -61,7 +61,7 @@
                     color="gray"
                     opacity="0.75"
                     position="0 -0.4 0.1"> 
-                        <a-text value="How to Play" width="3"
+                        <a-text value="Cara Bermain" width="3"
                             color="black" align="center" 
                             shader="flat" position="0 0 0"></a-text>
                     </a-plane>
@@ -77,14 +77,14 @@
             opacity="0.5"> 
                 <a-text value="Game Over"
                     color="red" align="center" 
-                    shader="flat" position="0.5 0"></a-text>
-                <a-text value="Score" width="3"
+                    shader="flat" position="0 0.5 0"></a-text>
+                <a-text value="Skor" width="3"
                     color="black" align="center" 
                     shader="flat" position="-0.3 0.2 0"></a-text>    
                 <a-text id="finalscore" value="0" width="4"
                     color="black" align="center" 
                     shader="flat" position="-0.3 0 0"></a-text>
-                <a-text value="Best" width="3"
+                <a-text value="Tertinggi" width="3"
                     color="black" align="center" 
                     shader="flat" position="0.3 0.2 0"></a-text>    
                 <a-text id="best" value="0" width="4"
@@ -98,7 +98,7 @@
                 color="gray"
                 opacity="0.75"
                 position="-0.6 -0.4 0.1"> 
-                    <a-text value="Back" width="3"
+                    <a-text value="Kembali" width="3"
                         color="black" align="center" 
                         shader="flat" position="0 0 0"></a-text>
                 </a-plane>
@@ -110,7 +110,7 @@
                 color="gray"
                 opacity="0.75"
                 position="0.6 -0.4 0.1"> 
-                    <a-text value="Play Again" width="3"
+                    <a-text value="Main Lagi" width="3"
                         color="black" align="center" 
                         shader="flat" position="0 0 0"></a-text>
                 </a-plane>
@@ -123,18 +123,18 @@
             height="1.5"
             color="white"
             opacity="0.5"> 
-                <a-text value="How To Play" width="4"
+                <a-text value="Cara Bermain" width="4"
                     color="black" align="center" 
-                    shader="flat" position="0 0.5 0"></a-text>
-                <a-text value="Left Click to interact with menu
-                            or swing the baseball Bat
+                    shader="flat" position="0 0.55 0"></a-text>
+                <a-text value="Klik kiri untuk berinteraksi dengan menu
+                            atau mengayunkan tongkat baseball.
 
-                            Space to spawn the ball
-                            The ball will launch toward player
+                            Spasi untuk memunculkan bola.
+                            Bola akan dilemparkan ke arah pemain.
 
-                            Player needs to hit the ball as many as possible
-                            If the player miss the ball, they get a strike
-                            If the player get 3 strikes, the game ends." width="2"
+                            Pemain akan memukul bola sebanyak mungkin.
+                            Jika pemain gagal memukul bola, maka akan mendapatkan strike.
+                            Jika pemain mendapatkan 3 strike. permainan berakhir." width="2"
                     color="black" align="center" 
                     shader="flat" position="0 -0.1 0"></a-text>    
 
@@ -178,7 +178,7 @@
         opacity="0.5"
         rotation="0 10 0">
             <a-text
-            value="Score" color="black"
+            value="Skor" color="black"
             width="3"     align="center" 
             shader="flat" position="-0.2 0.15 0"
             ></a-text>
