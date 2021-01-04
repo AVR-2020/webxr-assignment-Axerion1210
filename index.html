@@ -27,6 +27,7 @@
         <a-asset>
             <a-asset-item id="bat" src="models/baseballBat/scene.gltf"></a-asset-item>
             <a-asset-item id="ball" src="models/ball/scene.gltf"></a-asset-item>
+            <a-asset-item id="tree" src="models/tree/scene.gltf"></a-asset-item>
         </a-asset>
         <a-camera wasd-controls-enabled="false">
             <a-cursor id="cursor" color="red"></a-cursor>
@@ -168,6 +169,48 @@
             height="0.2"
             opacity="0"
         ></a-box>
+        <a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="15 2 -15"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="5 2 -21"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="-5 2 -19"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="-15 2 -25"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="-18 2 -10"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="22 2 -5"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="22 2 10"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+            <a-entity
+                gltf-model="#tree"
+                position="-14 2 17"
+                scale= "0.01 0.01 0.01"
+            ></a-entity>
+        </a-entity>
         <!-- Play Area -->
         <a-entity id="playArea" visible="false">
         <!-- Scoreboard -->
